@@ -1,0 +1,17 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "useBuiltIns": "entry",
+                "corejs": 3,
+                "targets": {
+                    "browsers": [
+                        ">0.75%"
+                    ]
+                }
+            }
+        ],
+        "@babel/react"
+    ]
+}
