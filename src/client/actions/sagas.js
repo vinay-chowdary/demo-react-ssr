@@ -5,9 +5,15 @@ import { put, takeEvery, all } from "redux-saga/effects";
 // }
 
 const Fetch = async () => {
-  const response = await fetch("https://memes-gallery-api.herokuapp.com/memes");
-  const data = await response.json();
-  return [response.status, data];
+  try {
+    const response = await fetch(
+      "https://memes-gallery-api.herokuapp.com/memes"
+    );
+    const data = await response.json();
+    return [response.status, data];
+  } catch (error) {
+    return [500, error];
+  }
 };
 
 function* fetchMemes() {
